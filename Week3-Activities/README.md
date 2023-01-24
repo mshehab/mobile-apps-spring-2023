@@ -4,7 +4,7 @@
 
 We use `Intent` to navigate from activity to another. The idea is tell the Android system which activity you would like to go to. Below is the code for using the lancher to start an activity for result.
 
-```
+```java
 public class MainActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> startForResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 Below is the code for passing the data back to the launching activity.
 
-```
+```java
 public class SecondActivity extends AppCompatActivity {
     public static final String NAME_KEY = "name";
     @Override
