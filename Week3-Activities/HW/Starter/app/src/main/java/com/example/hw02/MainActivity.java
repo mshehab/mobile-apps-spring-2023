@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         textViewStatus = findViewById(R.id.textViewStatus);
         textViewWeightGender = findViewById(R.id.textViewWeightGender);
         viewStatus = findViewById(R.id.viewStatus);
-
-
         findViewById(R.id.buttonSetProfile).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -38,7 +38,5 @@ public class SetProfileActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
