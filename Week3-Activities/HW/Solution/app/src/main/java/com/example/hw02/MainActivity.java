@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
             double bac = valueA*5.14/(profile.getWeight() * valueR);
 
-            textViewBACLevel.setText("BAC Level: " + bac);
+            textViewBACLevel.setText("BAC Level: " + String.format("%.3f", bac));
 
             if(bac <= 0.08){
                 textViewStatus.setText("You're safe");
