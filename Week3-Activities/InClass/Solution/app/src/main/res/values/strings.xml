@@ -1,20 +1,19 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="welcome">Welcome!!</string>
+    <string name="app_name">InClass03</string>
+    <string name="welcome">Welcome !!</string>
     <string name="register">Register</string>
-    <string name="name">Name:</string>
-    <string name="email">Email:</string>
+    <string name="name_label">Name:</string>
+    <string name="email_label">Email:</string>
     <string name="id_label">ID:</string>
-    <string name="dept">Dept:</string>
-    <string name="enter_name">Enter Name</string>
-    <string name="enter_email">Enter Email</string>
-    <string name="enter_id">Enter ID</string>
+    <string name="dept_label">Dept:</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="email_hint">Enter Email</string>
+    <string name="id_hint">Enter ID</string>
     <string name="select">Select</string>
     <string name="submit">Submit</string>
     <string name="cs_label">Computer Science</string>
-    <string name="SIS_label">Software and Info Systems</string>
-    <string name="bio_label">BioInformatics</string>
+    <string name="sis_label">Software and Info. Systems</string>
+    <string name="bio_label">Bio Informatics</string>
     <string name="ds_label">Data Science</string>
     <string name="cancel">Cancel</string>
-    <string name="select_btn_label">Select</string>
 </resources>
