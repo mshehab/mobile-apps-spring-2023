@@ -4,7 +4,7 @@
 View binding will make it much easier to manage the UI components in your code. It creates a classes that represent each of the layout xml files, which enable you to have access to all the layout components that have id's assigned to them. To setup follow the following steps:
 1. Open the Module (app) build.gradle file
 2. Under the `android` section include the following
-```json
+```yaml
 buildFeatures {
         viewBinding true
     }
