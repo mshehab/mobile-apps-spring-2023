@@ -9,20 +9,38 @@ buildFeatures {
         viewBinding true
     }
 ```
-Using View Binding in a Activity:
 
-
+Using View Binding in an Activity:
 ```java
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+        //setContentView(R.layout.activity_main);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 
+}
+```
+
+Using View binding in Fragment:
+```java
+public class MainFragment extends Fragment {
+    public MainFragment() {
+        // Required empty public constructor
+    }
+
+    FragmentMainBinding binding;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //return inflater.inflate(R.layout.fragment_main, container, false);
+        
+        binding = FragmentMainBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
 }
 ```
