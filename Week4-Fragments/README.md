@@ -6,8 +6,8 @@ View binding will make it much easier to manage the UI components in your code. 
 2. Under the `android` section include the following
 ```yaml
 buildFeatures {
-        viewBinding true
-    }
+    viewBinding true
+}
 ```
 
 Using View Binding in an Activity:
