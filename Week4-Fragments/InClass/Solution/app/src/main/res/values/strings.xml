@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">InClass04</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome !!</string>
+    <string name="register">Register</string>
+
+    <string name="name_label">Name:</string>
+    <string name="email_label">Email:</string>
+    <string name="id_label">ID:</string>
+    <string name="dept_label">Dept:</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="email_hint">Enter Email</string>
+    <string name="id_hint">Enter ID</string>
+    <string name="select">Select</string>
+    <string name="submit">Submit</string>
+    <string name="cs_label">Computer Science</string>
+    <string name="sis_label">Software and Info. Systems</string>
+    <string name="bio_label">Bio Informatics</string>
+    <string name="ds_label">Data Science</string>
+    <string name="cancel">Cancel</string>
+
+</resources>
