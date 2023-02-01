@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="10dp"
+tools:context=".AddDrinkFragment">
+
+<TextView
+    android:id="@+id/textView5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:text="@string/drink_size"
+    app:layout_constraintBottom_toBottomOf="@+id/radioGroupDrinkSize"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/radioGroupDrinkSize" />
+
+<TextView
+    android:id="@+id/textView6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/alcohol_percentage"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/seekBarAlcohol" />
+
+<RadioGroup
+    android:id="@+id/radioGroupDrinkSize"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toEndOf="@+id/textView5"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RadioButton
+        android:id="@+id/radioButton1oz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/one_oz" />
+
+    <RadioButton
+        android:id="@+id/radioButton5oz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/five_oz" />
+
+    <RadioButton
+        android:id="@+id/radioButton12oz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/twelve_oz" />
+</RadioGroup>
+
+<TextView
+    android:id="@+id/textViewAlcoholPercentage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/default_percentage"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/seekBarAlcohol" />
+
+<SeekBar
+    android:id="@+id/seekBarAlcohol"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:max="30"
+    android:progress="12"
+    app:layout_constraintEnd_toStartOf="@+id/textViewAlcoholPercentage"
+    app:layout_constraintStart_toEndOf="@+id/textView6"
+    app:layout_constraintTop_toBottomOf="@+id/radioGroupDrinkSize" />
+
+<Button
+    android:id="@+id/buttonCancel"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="8dp"
+    android:text="@string/cancel"
+    android:textAllCaps="false"
+    app:layout_constraintEnd_toStartOf="@+id/space"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/seekBarAlcohol" />
+
+<Button
+    android:id="@+id/buttonAddDrink"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="16dp"
+    android:text="@string/add_drink"
+    android:textAllCaps="false"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/space"
+    app:layout_constraintTop_toBottomOf="@+id/seekBarAlcohol" />
+
+<Space
+    android:id="@+id/space"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="@+id/buttonAddDrink"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/seekBarAlcohol" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
