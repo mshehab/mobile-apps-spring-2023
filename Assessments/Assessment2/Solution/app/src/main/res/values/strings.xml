@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Assessment 2</string>
+    <string name="weight_label">Weight:</string>
+    <string name="gender_label">Gender:</string>
+    <string name="set_weight_label">Set Weight</string>
+    <string name="set_gender_label">Set Gender</string>
+    <string name="submit_label">Submit</string>
+    <string name="reset_label">Reset</string>
+    <string name="set_label">Set</string>
+    <string name="cancel_label">Cancel</string>
+    <string name="close_label">Close</string>
+    <string name="weight_lbs_label">Weight (lbs):</string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="your_fullname">ENTER YOUR NAME HERE</string>
+    <string name="hint_weight">Enter Weight</string>
+</resources>
