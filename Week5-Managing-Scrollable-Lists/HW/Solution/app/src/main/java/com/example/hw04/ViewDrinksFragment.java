@@ -6,14 +6,20 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hw04.databinding.DrinkRowItemBinding;
 import com.example.hw04.databinding.FragmentViewDrinksBinding;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ViewDrinksFragment extends Fragment {
     private static final String ARG_PARAM_DRINKS = "ARG_PARAM_DRINKS";
@@ -47,70 +53,78 @@ public class ViewDrinksFragment extends Fragment {
         return binding.getRoot();
     }
 
+
+    DrinksAdapter adapter;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("View Drinks");
-        currentIndex = 0;
-        displayDrink();
 
-
-
-        binding.imageViewNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(currentIndex == mDrinks.size() - 1){
-                    currentIndex = 0;
-                } else {
-                    currentIndex++;
-                }
-                displayDrink();
-            }
-        });
-
-        binding.imageViewPrevious.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                displayPrevious();
-            }
-        });
-
-        binding.imageViewDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrinks.remove(currentIndex);
-                if(mDrinks.size() == 0){
-                    mListener.closeViewDrinks();
-                } else {
-                    displayPrevious();
-                }
-            }
-        });
-
-        binding.buttonCancel.setOnClickListener(new View.OnClickListener() {
+        binding.buttonClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.closeViewDrinks();
             }
         });
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new DrinksAdapter();
+        binding.recyclerView.setAdapter(adapter);
+
+        binding.imageViewSortAscAlcohol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.sort(mDrinks, new Comparator<Drink>() {
+                    @Override
+                    public int compare(Drink d1, Drink d2) {
+                        return (int) (d1.getAlcohol() - d2.getAlcohol());
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        binding.imageViewSortDescAlcohol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.sort(mDrinks, new Comparator<Drink>() {
+                    @Override
+                    public int compare(Drink d1, Drink d2) {
+                        return (int) (-1 * (d1.getAlcohol() - d2.getAlcohol()));
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        binding.imageViewSortAscDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.sort(mDrinks, new Comparator<Drink>() {
+                    @Override
+                    public int compare(Drink d1, Drink d2) {
+                        return d1.getAddedOn().compareTo(d2.getAddedOn());
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        binding.imageViewSortDescDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.sort(mDrinks, new Comparator<Drink>() {
+                    @Override
+                    public int compare(Drink d1, Drink d2) {
+                        return -1 * d1.getAddedOn().compareTo(d2.getAddedOn());
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
+        });
+
     }
 
-    void displayPrevious(){
-        if(currentIndex == 0){
-            currentIndex = mDrinks.size() - 1;
-        } else {
-            currentIndex--;
-        }
-        displayDrink();
-    }
-
-    private void displayDrink(){
-        Drink drink = mDrinks.get(currentIndex);
-        binding.textViewDrinksCount.setText("Drink " + (currentIndex + 1) + " out of " + mDrinks.size());
-        binding.textViewDrinkSize.setText(String.valueOf(drink.getSize()) + "oz");
-        binding.textViewDrinkAlcoholPercent.setText(String.valueOf(drink.getAlcohol()) + "% Alcohol");
-        binding.textViewDrinkAddedOn.setText("Added " + drink.getAddedOn().toString());
-    }
 
     ViewDrinksFragmentListener mListener;
 
@@ -122,6 +136,57 @@ public class ViewDrinksFragment extends Fragment {
 
     interface ViewDrinksFragmentListener{
         void closeViewDrinks();
+    }
+
+    class DrinksAdapter extends RecyclerView.Adapter<DrinksAdapter.DrinkViewHolder>{
+        @NonNull
+        @Override
+        public DrinkViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            DrinkRowItemBinding binding = DrinkRowItemBinding.inflate(getLayoutInflater(), parent, false);
+            return new DrinkViewHolder(binding);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull DrinkViewHolder holder, int position) {
+            Drink drink = mDrinks.get(position);
+            holder.setupUI(drink);
+        }
+
+        @Override
+        public int getItemCount() {
+            return mDrinks.size();
+        }
+
+        class DrinkViewHolder extends RecyclerView.ViewHolder{
+            DrinkRowItemBinding mBinding;
+            Drink mDrink;
+            public DrinkViewHolder(DrinkRowItemBinding binding) {
+                super(binding.getRoot());
+                mBinding = binding;
+            }
+
+            public void setupUI(Drink drink){
+                mBinding.textViewAlcoholPercentage.setText(String.valueOf(drink.getAlcohol()) + "% Alcohol");
+                mBinding.textViewAlcoholSize.setText(String.valueOf(drink.getSize()) + "oz");
+                mBinding.textViewDateAdded.setText("Added " + String.valueOf(drink.getAddedOn().toString()));
+
+                mDrink = drink;
+
+                mBinding.imageViewDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDrinks.remove(mDrink);
+
+                        if(mDrinks.size() == 0){
+                            mListener.closeViewDrinks();
+                        } else {
+                            notifyDataSetChanged();
+                        }
+                    }
+                });
+
+            }
+        }
     }
 
 }

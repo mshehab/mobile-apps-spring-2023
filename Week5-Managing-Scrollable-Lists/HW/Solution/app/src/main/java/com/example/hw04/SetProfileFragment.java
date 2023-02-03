@@ -32,7 +32,7 @@ public class SetProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Set Weight/Gender");
-        binding.buttonCancel.setOnClickListener(new View.OnClickListener() {
+        binding.buttonClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.cancelProfile();

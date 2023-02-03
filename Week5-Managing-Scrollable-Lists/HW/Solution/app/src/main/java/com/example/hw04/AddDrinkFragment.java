@@ -67,7 +67,7 @@ public class AddDrinkFragment extends Fragment {
             }
         });
 
-        binding.buttonCancel.setOnClickListener(new View.OnClickListener() {
+        binding.buttonClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.cancelAddDrink();

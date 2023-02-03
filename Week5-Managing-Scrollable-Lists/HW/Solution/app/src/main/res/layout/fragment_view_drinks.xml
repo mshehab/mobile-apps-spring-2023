@@ -7,85 +7,80 @@ android:layout_height="match_parent"
 android:padding="10dp"
 tools:context=".ViewDrinksFragment">
 
-<TextView
-    android:id="@+id/textViewDrinksCount"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="TextView"
-    android:textAlignment="center"
-    android:textSize="22sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-<TextView
-    android:id="@+id/textViewDrinkSize"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:text="TextView"
-    android:textAlignment="center"
-    android:textSize="16sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textViewDrinksCount" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/sort_by_alcohol"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewSortAscAlcohol"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSortAscAlcohol"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSortAscAlcohol" />
 
-<TextView
-    android:id="@+id/textViewDrinkAlcoholPercent"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:text="TextView"
-    android:textAlignment="center"
-    android:textSize="16sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textViewDrinkSize" />
-
-<TextView
-    android:id="@+id/textViewDrinkAddedOn"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:text="TextView"
-    android:textAlignment="center"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textViewDrinkAlcoholPercent" />
-
-<ImageView
-    android:id="@+id/imageViewPrevious"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/imageViewDelete"
-    app:srcCompat="@drawable/ic_previous" />
-
-<ImageView
-    android:id="@+id/imageViewNext"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/imageViewDelete"
-    app:srcCompat="@drawable/ic_next" />
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/sort_by_date"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewSortAscDate"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSortAscDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSortAscDate" />
 
     <ImageView
-        android:id="@+id/imageViewDelete"
+        android:id="@+id/imageViewSortAscAlcohol"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_sort_ascending"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSortDescAlcohol"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSortAscDate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_sort_ascending"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSortDescDate"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSortDescDate" />
+
+    <ImageView
+        android:id="@+id/imageViewSortDescAlcohol"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_sort_descending"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSortDescDate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_sort_descending"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSortDescAlcohol" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonClose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDrinkAddedOn"
-        app:srcCompat="@drawable/ic_trash" />
-
-<Button
-    android:id="@+id/buttonCancel"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:text="@string/cancel"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageViewDelete" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSortAscDate"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
