@@ -1,22 +1,13 @@
 package com.example.assessment3;
 
-<<<<<<< HEAD
 import android.os.Bundle;
 
-=======
-import android.content.Context;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
->>>>>>> 9871bc85aa04e30eee1f81dd1131f6df5659fedb
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-<<<<<<< HEAD
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SetGenderFragment#newInstance} factory method to
@@ -33,17 +24,10 @@ public class SetGenderFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-=======
-import com.example.assessment3.databinding.FragmentSetGenderBinding;
-
-public class SetGenderFragment extends Fragment {
-
->>>>>>> 9871bc85aa04e30eee1f81dd1131f6df5659fedb
     public SetGenderFragment() {
         // Required empty public constructor
     }
 
-<<<<<<< HEAD
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -77,52 +61,4 @@ public class SetGenderFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_set_gender, container, false);
     }
-=======
-    FragmentSetGenderBinding binding;
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentSetGenderBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("Set Gender");
-
-
-        binding.buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.cancelSetGender();
-            }
-        });
-
-        binding.buttonSet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String gender = "Female";
-                if(binding.radioGroup.getCheckedRadioButtonId() == R.id.radioButtonMale){
-                    gender = "Male";
-                }
-                mListener.sendSelectedGender(gender);
-            }
-        });
-    }
-
-    SetGenderListener mListener;
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        mListener = (SetGenderListener) context;
-    }
-
-    interface SetGenderListener{
-        void sendSelectedGender(String gender);
-        void cancelSetGender();
-    }
-
-
->>>>>>> 9871bc85aa04e30eee1f81dd1131f6df5659fedb
 }

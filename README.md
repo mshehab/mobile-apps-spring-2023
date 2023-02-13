@@ -7,8 +7,7 @@ This course focuses on Android development using Java
 - Week 3 : Managing Activities
 - Week 4 : Fragments
 - Week 5 : Managing Scrollable Lists
-- Week 6 : Concurrency and Thread Communication
-- Week 7 : Making HTTP Connections and JSON Parsing
+- Weeks 6 and 7 : Making HTTP Connections and JSON Parsing
 - Week 8 : XML Parsing
 - Week 9 : Midterm Exam
 - Weeks 10, 11 and 12 : Firebase and Data Storage
