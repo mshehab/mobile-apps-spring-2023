@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Assessment 3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="name_label">Name:</string>
+    <string name="enter_name_hint">Enter Name</string>
+    <string name="gender_label">Gender:</string>
+    <string name="set_gender">Set Gender</string>
+    <string name="na">N/A</string>
+    <string name="submit">Submit</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="close">Close</string>
+    <string name="your_fullname">ENTER YOUR NAME HERE</string>
+</resources>
