@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "ec975f0f-4e04-4faa-a86e-4b234958ca00",
+		"name": "ITIS4180 Contacts App - JSON No Update",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2842848"
+	},
+	"item": [
+		{
+			"name": "/contacts/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.theappsdr.com/contacts/json",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contacts",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/contact/json/create/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Alice Smith",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "a@a.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123-456-7890",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "HOME",
+							"description": "CELL, OFFICE or HOME",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.theappsdr.com/contact/json/create",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contact",
+						"json",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/contact/json/delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "63",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.theappsdr.com/contact/json/delete",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contact",
+						"json",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
