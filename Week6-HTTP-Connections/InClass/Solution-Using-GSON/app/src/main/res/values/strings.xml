@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">InClass06</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone_type_cell">CELL</string>
+    <string name="phone_type_home">HOME</string>
+    <string name="phone_type_office">OFFICE</string>
+    <string name="phone_type">Phone Type:</string>
+    <string name="email_hint">Enter Email</string>
+    <string name="phone_hint">Enter Phone #</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="email">Email:</string>
+    <string name="phone">Phone:</string>
+    <string name="name">Name:</string>
+    <string name="add_contact">Add Contact</string>
+</resources>
