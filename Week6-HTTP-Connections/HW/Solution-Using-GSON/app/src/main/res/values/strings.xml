@@ -10,5 +10,5 @@
     <string name="cloudiness">Cloudiness</string>
     <string name="check_forecast">Check Forecast</string>
     <string name="na">N/A</string>
-    <string name="api_key">53c3ca5f12048f4d1ec8a610c6b32e1b</string>
+    <string name="api_key">ADD_YOUR_KEY_HERE</string>
 </resources>
