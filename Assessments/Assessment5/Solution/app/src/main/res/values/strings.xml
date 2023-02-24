@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Assessment 5</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="fname_hint">First Name</string>
+    <string name="lname_hint">Last Name</string>
+    <string name="login_btn_label">Login</string>
+    <string name="create_new_account_label">Create New Account</string>
+    <string name="submit_btn_label">Submit</string>
+    <string name="cancel_btn_label">Cancel</string>
+    <string name="create_forum_btn_label">Create Forum</string>
+    <string name="logout_btn_label">Logout</string>
+    <string name="enter_msg_hint">Enter Message</string>
+    <string name="enter_forum_title_hint">Enter Forum Title</string>
+    <string name="preference_file_key">auth_data_file</string>
+</resources>
