@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity implements LoginFragment.LoginListener,
         SignUpFragment.SignUpListener, PostsFragment.PostsListener, CreatePostFragment.CreatePostListener {
 
@@ -12,8 +14,23 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.Log
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.containerView, new LoginFragment())
+                    .commit();
+        } else {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.containerView, new PostsFragment())
+                    .commit();
+        }
+
+
+    }
+
+    @Override
+    public void authSuccessful() {
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.containerView, new LoginFragment())
+                .replace(R.id.containerView, new PostsFragment())
                 .commit();
     }
 
@@ -33,7 +50,10 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.Log
 
     @Override
     public void logout() {
-
+        FirebaseAuth.getInstance().signOut();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.containerView, new LoginFragment())
+                .commit();
     }
 
     @Override
