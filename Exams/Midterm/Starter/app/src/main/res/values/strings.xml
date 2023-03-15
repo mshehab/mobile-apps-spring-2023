@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Midterm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="review_hint">Enter Review</string>
+    <string name="rate_review_label">Rate your satisfaction:</string>
+    <string name="satisfied_level1_label">Very dissatisfied</string>
+    <string name="satisfied_level2_label">Somewhat dissatisfied</string>
+    <string name="satisfied_level3_label">Neither satisfied nor dissatisfied</string>
+    <string name="satisfied_level4_label">Somewhat satisfied</string>
+    <string name="satisfied_level5_label">Very satisfied</string>
+    <string name="submit_label">Submit</string>
+    <string name="reviews_label">Reviews:</string>
+</resources>
