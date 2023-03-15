@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_logout"
+        android:enabled="true"
+        android:title="Logout"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_icon"
+        android:title="Add Course"
+        android:visible="true"
+        app:showAsAction="always" />
+
+</menu>

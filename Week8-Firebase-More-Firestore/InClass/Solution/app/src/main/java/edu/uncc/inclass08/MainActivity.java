@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements LoginFragment.LoginListener,
-        SignUpFragment.SignUpListener, GradesFragment.GradesListener {
+        SignUpFragment.SignUpListener, GradesFragment.GradesListener, AddCourseFragment.AddCourseListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +52,23 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.Log
                 .replace(R.id.rootView, new AddCourseFragment())
                 .addToBackStack(null)
                 .commit();
+    }
+
+    @Override
+    public void logout() {
+        FirebaseAuth.getInstance().signOut();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.rootView, new LoginFragment())
+                .commit();
+    }
+
+    @Override
+    public void doneAddCourse() {
+        getSupportFragmentManager().popBackStack();
+    }
+
+    @Override
+    public void cancelAddCourse() {
+        getSupportFragmentManager().popBackStack();
     }
 }

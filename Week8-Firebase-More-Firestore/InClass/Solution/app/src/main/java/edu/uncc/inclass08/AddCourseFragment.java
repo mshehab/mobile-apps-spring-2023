@@ -1,5 +1,6 @@
 package edu.uncc.inclass08;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 import edu.uncc.inclass08.databinding.FragmentAddCourseBinding;
 
@@ -62,9 +71,54 @@ public class AddCourseFragment extends Fragment {
                         courseLetterGrade = "F";
                     }
 
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                    DocumentReference docRef = db.collection("grades").document();
+                    HashMap<String, Object> data = new HashMap<>();
+                    data.put("hours", courseHours);
+                    data.put("letterGrade", courseLetterGrade);
+                    data.put("name", courseName);
+                    data.put("number", courseNumber);
+                    data.put("owner_id", FirebaseAuth.getInstance().getUid());
+                    data.put("docId", docRef.getId());
+
+                    docRef.set(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                mListener.doneAddCourse();
+                            } else {
+                                Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });
 
+        binding.buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.cancelAddCourse();
+            }
+        });
+
+    }
+
+    AddCourseListener mListener;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof AddCourseListener) {
+            mListener = (AddCourseListener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement AddCourseListener");
+        }
+    }
+
+    interface AddCourseListener {
+        void doneAddCourse();
+        void cancelAddCourse();
     }
 }
