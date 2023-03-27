@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "902963378091",
+    "project_id": "forumsfirebase",
+    "storage_bucket": "forumsfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902963378091:android:f1e2eb91e31fbb495044ee",
+        "android_client_info": {
+          "package_name": "edu.uncc.assessment06"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902963378091-llq6sbgk7gmkfc1rcag997ofvo0o5buc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGomCd9efvC7EUL69MCWHU1ECeK_EBmRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902963378091-llq6sbgk7gmkfc1rcag997ofvo0o5buc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902963378091-snmq10gvm8gda9f5u002r533u90ptjgu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "edu.uncc.hw07"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902963378091:android:ad7c71e5b520d6db5044ee",
+        "android_client_info": {
+          "package_name": "edu.uncc.hw06"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902963378091-llq6sbgk7gmkfc1rcag997ofvo0o5buc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGomCd9efvC7EUL69MCWHU1ECeK_EBmRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902963378091-llq6sbgk7gmkfc1rcag997ofvo0o5buc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902963378091-snmq10gvm8gda9f5u002r533u90ptjgu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "edu.uncc.hw07"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
