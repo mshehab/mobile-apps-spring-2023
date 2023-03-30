@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Assessment07</string>
+    <string name="submit_label">Submit</string>
+    <string name="cancel_label">Cancel</string>
+    <string name="name_label">Full Name</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_label">Login</string>
+    <string name="logout_label">Logout</string>
+    <string name="enter_post_label">Enter Post</string>
+    <string name="create_post_label">Create Post</string>
+    <string name="posts_label">Posts</string>
+    <string name="back_label">Back</string>
+    <string name="create_account_label">Create New Account</string>
+    <string name="create_list_label">Create New List</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="check_cart_label">Check Cart</string>
+    <string name="add_new_item_label">Add New Item</string>
+    <string name="list_name_label">List Name</string>
+    <string name="item_name_label">Item Name</string>
+    <string name="quantity_label">Quantity:</string>
+
+</resources>
