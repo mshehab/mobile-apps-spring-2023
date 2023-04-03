@@ -69,8 +69,8 @@ public class GradesFragment extends Fragment {
                 } else if(grade.getLetterGrade().equals("D")){
                     letterGrade = 1.0;
                 }
-                acc = acc + grade.getHours() * letterGrade;
-                hours = hours + grade.getHours();
+                acc = acc + grade.getCourseHours() * letterGrade;
+                hours = hours + grade.getCourseHours();
             }
 
             if(hours == 0) {
@@ -127,10 +127,10 @@ public class GradesFragment extends Fragment {
             }
             public void setupUI(Grade grade){
                 this.mGrade = grade;
-                mBinding.textViewCourseHours.setText(mGrade.getHours() + "Credit Hours");
-                mBinding.textViewCourseName.setText(mGrade.getName());
+                mBinding.textViewCourseHours.setText(mGrade.getCourseHours() + "Credit Hours");
+                mBinding.textViewCourseName.setText(mGrade.getCourseName());
                 mBinding.textViewCourseLetterGrade.setText(mGrade.getLetterGrade());
-                mBinding.textViewCourseNumber.setText(mGrade.getNumber());
+                mBinding.textViewCourseNumber.setText(mGrade.getCourseNumber());
                 mBinding.imageViewDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

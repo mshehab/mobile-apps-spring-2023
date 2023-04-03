@@ -1,18 +1,20 @@
 package edu.uncc.inclass09;
 
 public class Grade {
-    public double hours;
-    public String letterGrade, name, number, owner_id, docId;
+    public double courseHours;
+    public String letterGrade;
+    public String courseName;
+    public String courseNumber;
 
     public Grade() {
     }
 
-    public double getHours() {
-        return hours;
+    public double getCourseHours() {
+        return courseHours;
     }
 
-    public void setHours(double hours) {
-        this.hours = hours;
+    public void setCourseHours(double courseHours) {
+        this.courseHours = courseHours;
     }
 
     public String getLetterGrade() {
@@ -23,47 +25,19 @@ public class Grade {
         this.letterGrade = letterGrade;
     }
 
-    public String getName() {
-        return name;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public String getNumber() {
-        return number;
+    public String getCourseNumber() {
+        return courseNumber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getOwner_id() {
-        return owner_id;
-    }
-
-    public void setOwner_id(String owner_id) {
-        this.owner_id = owner_id;
-    }
-
-
-    public String getDocId() {
-        return docId;
-    }
-
-    public void setDocId(String docId) {
-        this.docId = docId;
-    }
-
-    @Override
-    public String toString() {
-        return "Grade{" +
-                "hours=" + hours +
-                ", letterGrade='" + letterGrade + '\'' +
-                ", name='" + name + '\'' +
-                ", number='" + number + '\'' +
-                ", owner_id='" + owner_id + '\'' +
-                '}';
+    public void setCourseNumber(String courseNumber) {
+        this.courseNumber = courseNumber;
     }
 }
